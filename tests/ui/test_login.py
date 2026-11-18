@@ -8,7 +8,7 @@ def test_valid_login_shows_products(login_page, inventory_page):
     login_page.open()
     login_page.login(VALID_USER, VALID_PASSWORD)
     inventory_page.expect_loaded()
-    assert inventory_page.items.count() == 6
+    expect(inventory_page.items).to_have_count(6)
 
 
 @pytest.mark.regression

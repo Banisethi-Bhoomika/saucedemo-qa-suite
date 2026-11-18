@@ -22,7 +22,7 @@ def test_add_two_items_then_remove_one(logged_in, inventory_page):
 def test_cart_page_lists_added_item(logged_in, inventory_page, cart_page):
     inventory_page.add_to_cart(BACKPACK)
     inventory_page.open_cart()
-    assert cart_page.items.count() == 1
+    expect(cart_page.items).to_have_count(1)
     expect(cart_page.item_names).to_have_text("Sauce Labs Backpack")
 
 
